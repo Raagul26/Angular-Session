@@ -1,0 +1,44 @@
+<main class="main">
+    <h3 [hidden]="hide">Welcome to Angular session</h3><br>
+    <h4>PIPES</h4>
+    {{title | uppercase}} <br>
+    {{title | lowercase}} <br>
+    {{title | titlecase}} <br>
+    {{58954.215 | currency:'EUR':false}} <br>
+    {{100.254 | currency:'INR':true}} <br>
+    {{238795.2654 | number:'.1-3'}} <br> <!--min 2 to max 3-->
+    {{toDateTime | date:'fullDate'}} <br> <!--short, medium, long, full-->
+    {{toDateTime | date:'fullTime'}} <br>
+    {{numbers | slice:2:5}} <br> <!-- start : end (inclusive)-->
+    {{00.55 | percent}} <br>
+    <button (click)="toggle()">Welcome</button>
+   
+    <h4>DIRECTIVES</h4>
+    <ul>
+        <li *ngFor="let student of students; let even = even; let odd = odd" 
+        [ngClass]="{evenElements:even,oddElements:odd}">
+          {{ student.name }} - {{ student.mark }}
+        </li>
+    </ul>    
+
+   <ng-container *ngIf="isLoggedIn then loggedIn else loggedOut">
+   </ng-container>
+    
+   <ng-template #loggedIn>
+        Welcome to our website
+   </ng-template>
+
+   <ng-template #loggedOut>
+        You are successfully logged out
+   </ng-template>
+
+    <div [ngSwitch]="8">
+        <div *ngSwitchCase="1">One</div>
+        <div *ngSwitchCase="2">Two</div>
+        <div *ngSwitchCase="3">Three</div>
+        <div *ngSwitchCase="4">Four</div>
+        <div *ngSwitchCase="5">Five</div>
+        <div *ngSwitchDefault>This is Default</div>
+    </div>  
+    
+</main>
