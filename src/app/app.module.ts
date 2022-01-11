@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TaskManagerComponent } from './task-manager/task-manager.component';
+import { FormsModule, NgModel } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TaskManagerComponent } from './task-manager/task-manager.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // root element

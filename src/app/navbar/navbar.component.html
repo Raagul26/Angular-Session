@@ -17,10 +17,11 @@
               <a class="nav-link active" href="" tabindex="-1" aria-disabled="true" routerLink="taskmanager" routerLinkActive="active">Task Manager</a>
             </li>
           </ul>
-          <form class="d-flex" (keyup)="0">
-            {{searchinput.value.length}}
+          {{parentData}}
+          <form class="d-flex ps-4" (keyup)="0">
+            <span class="me-3 pt-1 text-white">{{searchinput.value.length}}</span>
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #searchinput>
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-light" type="submit" (click)="sendData()">Search</button>
           </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
   <div class="row">
-    <app-navbar></app-navbar>
+    <app-navbar [parentData]="data" (data)="receiveData($event)"></app-navbar>
   </div>
 
   <div class="row">
@@ -9,7 +9,7 @@
       <app-sidebar></app-sidebar>
     </div>
     <div class="col-sm">
-      <router-outlet></router-outlet>
+      <router-outlet ></router-outlet>
     </div>
   </div>
 

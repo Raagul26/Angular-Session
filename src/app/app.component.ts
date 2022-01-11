@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'first angular app';
+  data = "Parent to child"
+
+  receiveData(e:any)
+  {
+    this.data=e
+  }
 }
